@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altersverifikation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Willkommen auf unserer Seite</h1>
+    <p>Diese Seite enthält Informationen zu Produkten, die für Personen unter 18 Jahren nicht geeignet sind.</p>
+    <h2>Sind Sie 18 Jahre oder älter?</h2>
+    <button onclick="checkAge(true)">Ja</button>
+    <button onclick="checkAge(false)">Nein</button>
+    <p id="error-message">Zugriff verweigert. Sie müssen mindestens 18 Jahre alt sein, um diese Seite zu betreten.</p>
+</div>
+
+<script>
+    function checkAge(isOfAge) {
+        if (isOfAge) {
+            window.location.href = 'https://IhreHauptseite'; // Ersetzen Sie 'https://IhreHauptseite' mit der URL Ihrer Google Sites Seite
+        } else {
+            document.getElementById('error-message').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
